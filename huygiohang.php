@@ -1,0 +1,20 @@
+<?php
+session_start();
+?>
+<?php
+ob_start();
+?>
+<?php
+
+    $mang2=explode("-",$_SESSION['mat_hang']);
+    for($t=0;$t<count($mang2);$t++)
+    {
+        $sl="so_luong".$mang2[$t];
+        unset($_SESSION[$sl]);
+    }
+    unset($_SESSION['mat_hang']);
+    header("location:index.php");
+?>
+<?php
+ob_end_flush();
+?>
